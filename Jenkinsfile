@@ -4,7 +4,7 @@ pipeline{
         stage("Test"){
             steps{
                 sh '''
-                       echo "Hello World from abatans"
+                       echo "Hello World from abatanssudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
                    '''
             }
         }
