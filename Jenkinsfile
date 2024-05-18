@@ -4,7 +4,7 @@ pipeline{
         stage("Test"){
             steps{
                 sh '''
-                       echo "Hello World"
+                       echo "Hello World from abatans"
                    '''
             }
         }
@@ -15,9 +15,11 @@ pipeline{
                        
                        sudo apt update
 
-                       sudo docker build -t monyslim/pixer:latest .
+                       sudo systemctl enable nginx
 
-                       sudo docker run -d -p 801:80 monyslim/pixer:latest
+                       sudo docker build -t abatan/pixer:latest .
+
+                       sudo docker run -d -p 801:80 abatan/pixer:latest
                    
                    
                    
