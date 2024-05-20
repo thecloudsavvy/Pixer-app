@@ -21,7 +21,7 @@ pipeline{
 
                        sudo docker build -t abatan/pixer:latest .
 
-                       sudo docker run -d -p 802:80 abatan/pixer:latest
+                       sudo docker run -d -p 803:80 abatan/pixer:latest
                    
                    
                    
