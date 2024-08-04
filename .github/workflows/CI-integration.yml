@@ -24,7 +24,7 @@ jobs:
       #   with:
       #     path: /tmp/.buildx-cache
   
-      -  name: "Build a Docker image from the repo"
+      -  name: "Build Docker image from the repo"
          run: |
             docker build -t abatan/pixer:${{ env.VERSION_NUMBER }} .
 
