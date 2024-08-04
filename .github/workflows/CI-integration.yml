@@ -7,7 +7,7 @@ jobs:
   app-deployment:
     runs-on: self-hosted
     steps: 
-      - name: "first run job"
+      - name: "run job"
         run: |
           echo "--- welcome to CI-Deployment ---"
       - name: "Checkout"
