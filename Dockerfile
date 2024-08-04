@@ -1,7 +1,9 @@
-FROM nginx
-COPY . /usr/share/nginx/html
-WORKDIR /usr/share/nginx/html
-RUN apt update
-RUN apt upgrade -y
-RUN apt install vim -y
-EXPOSE 80
+
+FROM node:14
+WORKDIR /app
+COPY package*.json .
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["node", "app.js"]
+
