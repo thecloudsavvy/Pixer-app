@@ -18,7 +18,7 @@ jobs:
   
       -  name: "Build a Docker image from the repo"
          run: |
-            docker built -t abatan/pixer:${{ env.VERSION_NUMBER }} .
+            docker build -t abatan/pixer:${{ env.VERSION_NUMBER }} .
 
       - name: "Log into Docker Hub"
         uses: docker/login-action@v3
