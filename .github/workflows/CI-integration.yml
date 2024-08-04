@@ -18,7 +18,7 @@ jobs:
   
       -  name: "Build a Docker image from the repo"
          run: |
-            docker build -t abatan/pixer:${{ env.VERSION_NUMBER }} .
+            sudo docker build -t abatan/pixer:${{ env.VERSION_NUMBER }} .
 
       - name: "Log into Docker Hub"
         uses: docker/login-action@v3
@@ -28,7 +28,7 @@ jobs:
 
       - name: "Push to Docker Hub"
         run: |
-          docker push abatan/pixer:${{ env.VERSION_NUMBER }}
+          sudo docker push abatan/pixer:${{ env.VERSION_NUMBER }}
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.20.0
