@@ -15,10 +15,18 @@ jobs:
       - name: "Create version number"
         run: |
           echo "VERSION_NUMBER=${RANDOM}" >> $GITHUB_ENV
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+    
+      - name: Set up Docker Cache
+        uses: docker/cache-action@v2
+        with:
+          path: /tmp/.buildx-cache
   
       -  name: "Build a Docker image from the repo"
          run: |
-            sudo docker build -t abatan/pixer:${{ env.VERSION_NUMBER }} .
+            docker build -t abatan/pixer:${{ env.VERSION_NUMBER }} .
 
       - name: "Log into Docker Hub"
         uses: docker/login-action@v3
@@ -28,7 +36,7 @@ jobs:
 
       - name: "Push to Docker Hub"
         run: |
-          sudo docker push abatan/pixer:${{ env.VERSION_NUMBER }}
+           docker push abatan/pixer:${{ env.VERSION_NUMBER }}
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.20.0
