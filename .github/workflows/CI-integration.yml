@@ -48,11 +48,11 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
         
-      - name: Upload Trivy scan results
-        uses: actions/upload-artifact@v3
-        with:
-            name: trivy-scan-results
-            path: trivy-image.txt
+      # - name: Upload Trivy scan results
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #       name: trivy-scan-results
+      #       path: trivy-image.txt
         
 
       
