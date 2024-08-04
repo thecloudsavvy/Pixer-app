@@ -9,7 +9,7 @@ jobs:
     steps: 
       - name: "first run job"
         run: |
-          echo "--- welcome to CI-Deployment: ---"
+          echo "--- welcome to CI-Deployment ---"
       - name: "Checkout"
         uses: actions/checkout@v4
       - name: "Create version number"
