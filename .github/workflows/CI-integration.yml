@@ -47,7 +47,7 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
-          scan-type: 'vuln' # Only scan for vulnerabilities
+
         
       # - name: Upload Trivy scan results
       #   uses: actions/upload-artifact@v3
